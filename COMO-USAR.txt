@@ -1,0 +1,45 @@
+========================================
+  SmartNutri - Como Usar
+========================================
+
+OPCAO 1 - MAIS FACIL (RECOMENDADO):
+====================================
+1. Procure na sua AREA DE TRABALHO (Desktop)
+2. Clique duas vezes no atalho "SmartNutri"
+3. Aguarde alguns segundos
+4. O navegador abrira automaticamente com a aplicacao!
+
+
+OPCAO 2 - Pela pasta:
+=====================
+1. Abra a pasta: C:\Users\User\Desktop\smartnutri
+2. Clique duas vezes em "executar.bat"
+3. Aguarde alguns segundos
+4. O navegador abrira automaticamente!
+
+
+OPCAO 3 - Pelo Cursor:
+======================
+1. Abra o terminal no Cursor
+2. Digite: cd C:\Users\User\Desktop\smartnutri
+3. Digite: npm run dev
+4. Abra o navegador e acesse: http://localhost:5173
+
+
+========================================
+IMPORTANTE:
+========================================
+- A primeira vez pode demorar um pouco para instalar tudo
+- Mantenha a janela do terminal aberta enquanto usar
+- Para fechar, feche a janela do terminal ou pressione Ctrl+C
+- O navegador abrira automaticamente em http://localhost:5173
+
+
+========================================
+PROBLEMAS?
+========================================
+- Se nao abrir automaticamente, copie e cole no navegador:
+  http://localhost:5173
+  
+- Se der erro, verifique se o Node.js esta instalado
+- Veja o arquivo INSTALACAO.md para mais detalhes

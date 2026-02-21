@@ -1,0 +1,57 @@
+========================================
+  GUIA RÁPIDO - Publicar SmartNutri GRÁTIS
+========================================
+
+VOCÊ NÃO PRECISA DE HOST PRÓPRIO!
+Use serviços GRATUITOS:
+
+========================================
+OPÇÃO MAIS FÁCIL: VERCEL
+========================================
+
+1. Acesse: https://vercel.com
+2. Clique em "Sign Up" (criar conta)
+3. Escolha "Continue with GitHub" ou crie com email
+4. Clique em "Add New Project"
+5. Arraste a PASTA INTEIRA "smartnutri" para o Vercel
+6. Aguarde 1-2 minutos
+7. PRONTO! Você terá uma URL tipo:
+   https://smartnutri-xxxxx.vercel.app
+
+Essa URL você pode compartilhar no WhatsApp!
+
+========================================
+ALTERNATIVA: NETLIFY
+========================================
+
+1. Acesse: https://netlify.com
+2. Crie conta gratuita
+3. Arraste a pasta "smartnutri" para o site
+4. Aguarde alguns minutos
+5. URL será: https://smartnutri-xxxxx.netlify.app
+
+========================================
+DEPOIS DE PUBLICAR:
+========================================
+
+1. Copie sua URL (ex: smartnutri-xxxxx.vercel.app)
+2. Abra o arquivo index.html
+3. Procure por: <meta property="og:url"
+4. Substitua "https://seu-dominio.com" pela sua URL real
+5. Faça upload novamente no Vercel/Netlify
+6. Compartilhe no WhatsApp!
+
+========================================
+TESTAR NO WHATSAPP:
+========================================
+
+1. Abra o WhatsApp
+2. Cole sua URL (ex: https://smartnutri-xxxxx.vercel.app)
+3. O preview vai aparecer automaticamente!
+
+========================================
+TUDO É GRATUITO!
+Sem cartão de crédito necessário!
+Sem conhecimento técnico avançado!
+
+========================================
