@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import IngredientsTable from './components/IngredientsTable';
@@ -100,12 +101,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex">
-      <Sidebar activeView={activeView} setActiveView={setActiveView} />
-      <main className="flex-1 ml-64 p-6 md:p-8 lg:p-10">
-        {renderContent()}
-      </main>
-    </div>
+    <ErrorBoundary>
+      <div className="min-h-screen flex">
+        <Sidebar activeView={activeView} setActiveView={setActiveView} />
+        <main className="flex-1 ml-64 p-6 md:p-8 lg:p-10">
+          {renderContent()}
+        </main>
+      </div>
+    </ErrorBoundary>
   );
 }
 
