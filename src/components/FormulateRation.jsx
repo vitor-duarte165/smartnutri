@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-import { simplexOptimization } from '../utils/simplex';
 import { useState } from 'react';
+import { simplexOptimization } from '../utils/simplex';
 import { Calculator, RefreshCw } from 'lucide-react';
 import FormulaResults from './FormulaResults';
 import AnimalProfile from './AnimalProfile';
@@ -120,4 +119,4 @@ export default function FormulateRation({ ingredients, onSaveFormula }) {
       )}
     </div>
   );
-}
+} // Fechei a chave que faltava aqui no final

@@ -6,6 +6,27 @@
   body {
     @apply bg-gray-eco-light text-gray-900;
   }
+
+  /* Compat: define non-prefixed appearance alongside vendor-prefixed variants */
+  button, input[type="button"], input[type="reset"], input[type="submit"], select {
+    -webkit-appearance: button;
+    appearance: button;
+  }
+
+  input[type="search"] {
+    -webkit-appearance: textfield;
+    appearance: textfield;
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    appearance: button;
+  }
 }
 
 @layer components {
