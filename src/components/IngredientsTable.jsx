@@ -18,13 +18,6 @@ export default function IngredientsTable({ ingredients, onUpdateIngredient }) {
     onUpdateIngredient(id, editValues);
     setEditingId(null);
     setEditValues({});
-
-    // Rolagem suave para o final da página após salvar alterações
-    if (typeof window !== 'undefined') {
-      setTimeout(() => {
-        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-      }, 100);
-    }
   };
 
   const handleCancel = () => {
