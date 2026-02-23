@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Edit2, Save, X } from 'lucide-react';
 
 export default function IngredientsTable({ ingredients, onUpdateIngredient }) {
   const [editingId, setEditingId] = useState(null);
   const [editValues, setEditValues] = useState({});
+  const [selectAll, setSelectAll] = useState(false);
 
   const handleEdit = (ingredient) => {
     setEditingId(ingredient.id);
@@ -32,6 +33,22 @@ export default function IngredientsTable({ ingredients, onUpdateIngredient }) {
     }));
   };
 
+  useEffect(() => {
+    if (Array.isArray(ingredients) && ingredients.length > 0) {
+      const allEnabled = ingredients.every(ing => ing.enabled !== false);
+      setSelectAll(allEnabled);
+    }
+  }, [ingredients]);
+
+  const handleToggleAll = (checked) => {
+    setSelectAll(checked);
+    ingredients.forEach(ing => {
+      onUpdateIngredient(ing.id, { enabled: checked });
+    });
+  };
+
+  
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -45,6 +62,17 @@ export default function IngredientsTable({ ingredients, onUpdateIngredient }) {
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-eco-medium">
+              <th className="text-center py-3 px-4 font-semibold text-eco-dark">
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="checkbox-control"
+                    checked={selectAll}
+                    onChange={(e) => handleToggleAll(e.target.checked)}
+                    aria-label="Selecionar todos"
+                  />
+                </label>
+              </th>
               <th className="text-left py-3 px-4 font-semibold text-eco-dark">Ingrediente</th>
               <th className="text-right py-3 px-4 font-semibold text-eco-dark">Preço/kg (R$)</th>
               <th className="text-right py-3 px-4 font-semibold text-eco-dark">% PB</th>
@@ -58,6 +86,17 @@ export default function IngredientsTable({ ingredients, onUpdateIngredient }) {
                 key={ingredient.id}
                 className="border-b border-gray-eco-medium hover:bg-gray-eco-light transition-colors"
               >
+                <td className="py-3 px-4 text-center">
+                  <label className="checkbox-label mx-auto">
+                    <input
+                      type="checkbox"
+                      className="checkbox-control"
+                      checked={ingredient.enabled !== false}
+                      onChange={(e) => onUpdateIngredient(ingredient.id, { enabled: e.target.checked })}
+                      aria-label={`Ativar ${ingredient.name}`}
+                    />
+                  </label>
+                </td>
                 <td className="py-3 px-4 font-medium text-eco-dark">
                   {ingredient.name}
                 </td>

@@ -10,8 +10,12 @@ export default function FormulateRation({ ingredients, onSaveFormula }) {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const handleCalculate = () => {
-    if (!selectedProfile || ingredients.length === 0) {
-      alert('Por favor, selecione um perfil animal e certifique-se de ter ingredientes cadastrados.');
+    const activeIngredients = Array.isArray(ingredients)
+      ? ingredients.filter(ing => ing.enabled !== false)
+      : [];
+
+    if (!selectedProfile || activeIngredients.length === 0) {
+      alert('Por favor, selecione um perfil animal e certifique-se de ter ingredientes ativos cadastrados.');
       return;
     }
 
@@ -24,7 +28,7 @@ export default function FormulateRation({ ingredients, onSaveFormula }) {
         minEnergy: selectedProfile.minEnergy,
       };
 
-      const optimizationResult = simplexOptimization(ingredients, constraints);
+      const optimizationResult = simplexOptimization(activeIngredients, constraints);
       setResult(optimizationResult);
       setIsCalculating(false);
 

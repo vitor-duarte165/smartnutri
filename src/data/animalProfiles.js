@@ -46,6 +46,7 @@ export const defaultIngredients = [
     pricePerKg: 1.20,
     protein: 8.5,
     energy: 3.4,
+    enabled: true,
   },
   {
     id: 2,
@@ -53,6 +54,7 @@ export const defaultIngredients = [
     pricePerKg: 2.50,
     protein: 45.0,
     energy: 3.2,
+    enabled: true,
   },
   {
     id: 3,
@@ -60,6 +62,7 @@ export const defaultIngredients = [
     pricePerKg: 1.10,
     protein: 9.0,
     energy: 3.1,
+    enabled: true,
   },
   {
     id: 4,
@@ -67,6 +70,7 @@ export const defaultIngredients = [
     pricePerKg: 1.80,
     protein: 16.0,
     energy: 2.8,
+    enabled: true,
   },
   {
     id: 5,
@@ -74,6 +78,7 @@ export const defaultIngredients = [
     pricePerKg: 1.50,
     protein: 7.0,
     energy: 2.9,
+    enabled: true,
   },
   {
     id: 6,
@@ -81,6 +86,7 @@ export const defaultIngredients = [
     pricePerKg: 1.30,
     protein: 12.0,
     energy: 2.5,
+    enabled: true,
   },
   {
     id: 7,
@@ -88,6 +94,7 @@ export const defaultIngredients = [
     pricePerKg: 1.90,
     protein: 28.0,
     energy: 3.0,
+    enabled: true,
   },
   {
     id: 8,
@@ -95,6 +102,7 @@ export const defaultIngredients = [
     pricePerKg: 4.50,
     protein: 0.0,
     energy: 8.8,
+    enabled: true,
   },
   {
     id: 9,
@@ -102,6 +110,7 @@ export const defaultIngredients = [
     pricePerKg: 0.80,
     protein: 0.0,
     energy: 0.0,
+    enabled: true,
   },
   {
     id: 10,
@@ -109,5 +118,6 @@ export const defaultIngredients = [
     pricePerKg: 3.20,
     protein: 0.0,
     energy: 0.0,
+    enabled: true,
   },
 ];
