@@ -71,49 +71,61 @@ export default function FormulateRation({ ingredients, onSaveFormula }) {
       {/* Seleção de Perfil */}
       <AnimalProfile onProfileSelect={setSelectedProfile} />
 
-      {/* Seleção de ingredientes a serem considerados na otimização */}
+      {/* Seleção de ingredientes a serem considerados na otimização (lista estilizada) */}
       <div className="card">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-lg font-semibold text-eco-dark">Ingredientes disponíveis</h3>
           <div className="flex gap-2">
             <button
               onClick={() => setSelectedIds(ingredients.map(i => i.id))}
-              className="btn-secondary"
+              className="btn-secondary px-3 py-1"
             >
               Selecionar todos
             </button>
             <button
               onClick={() => setSelectedIds([])}
-              className="btn-ghost"
+              className="btn-ghost px-3 py-1"
             >
               Limpar
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+        <ul className="divide-y divide-gray-100">
           {ingredients.map(ing => (
-            <label key={ing.id} className="flex items-center gap-2 p-2 border rounded cursor-pointer">
-              <input
-                type="checkbox"
-                checked={selectedIds.includes(ing.id)}
-                onChange={() => {
-                  setSelectedIds(prev => {
-                    const setPrev = new Set(prev);
-                    if (setPrev.has(ing.id)) {
-                      setPrev.delete(ing.id);
-                    } else {
-                      setPrev.add(ing.id);
-                    }
-                    return Array.from(setPrev);
-                  });
-                }}
-              />
-              <span className="text-sm">{ing.name}</span>
-            </label>
+            <li
+              key={ing.id}
+              className={`flex items-center justify-between gap-4 p-3 hover:bg-gray-50 rounded ${selectedIds.includes(ing.id) ? 'bg-white' : 'bg-gray-50'}`}
+            >
+              <div className="flex items-center gap-3">
+                <input
+                  type="checkbox"
+                  checked={selectedIds.includes(ing.id)}
+                  onChange={() => {
+                    setSelectedIds(prev => {
+                      const setPrev = new Set(prev);
+                      if (setPrev.has(ing.id)) setPrev.delete(ing.id);
+                      else setPrev.add(ing.id);
+                      return Array.from(setPrev);
+                    });
+                  }}
+                  className="w-4 h-4"
+                />
+                <div className="flex flex-col leading-tight">
+                  <span className="font-medium text-eco-dark">{ing.name}</span>
+                  <span className="text-xs text-gray-500">ID: {ing.id}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 text-sm text-gray-600">
+                <span className="px-2 py-1 bg-gray-100 rounded">R$ {Number(ing.pricePerKg).toFixed(2)}/kg</span>
+                <span className="px-2 py-1 bg-gray-100 rounded">PB {Number(ing.protein).toFixed(1)}%</span>
+                <span className="px-2 py-1 bg-gray-100 rounded">ED {Number(ing.energy).toFixed(2)}</span>
+              </div>
+            </li>
           ))}
-        </div>
-        <p className="text-sm text-gray-600 mt-2">Selecione os ingredientes que deseja incluir na otimização.</p>
+        </ul>
+        <p className="text-sm text-gray-600 mt-2">Marque os insumos que deseja incluir na otimização.</p>
       </div>
 
       {selectedProfile && (
