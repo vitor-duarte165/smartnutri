@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Calculator, RefreshCw } from 'lucide-react';
 import { simplexOptimization } from '../utils/simplex';
 import { useState } from 'react';
 import { Calculator, RefreshCw } from 'lucide-react';
-import { simplexOptimization } from '../utils/simplex';
 import FormulaResults from './FormulaResults';
 import AnimalProfile from './AnimalProfile';
 
