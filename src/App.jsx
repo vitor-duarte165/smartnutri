@@ -12,7 +12,6 @@ function App() {
   const [ingredients, setIngredients] = useState([]);
   const [formulas, setFormulas] = useState([]);
 
-  // Carrega ingredientes do localStorage ou usa os padrões
   useEffect(() => {
     const savedIngredients = localStorage.getItem('smartnutri-ingredients');
     if (savedIngredients) {
@@ -27,8 +26,7 @@ function App() {
       setFormulas(JSON.parse(savedFormulas));
     }
   }, []);
-
-  // Salva ingredientes no localStorage quando mudam
+  
   useEffect(() => {
     if (ingredients.length > 0) {
       localStorage.setItem('smartnutri-ingredients', JSON.stringify(ingredients));
@@ -57,12 +55,11 @@ function App() {
       // Poderia pré-selecionar bovino aqui se necessário
     } else if (action === 'formulate-suino') {
       setActiveView('formulate');
-      // Poderia pré-selecionar suíno aqui se necessário
+      // Poderia pré-selecionar suíno aqui se necessário 
     } else if (action === 'ingredients') {
       setActiveView('ingredients');
     }
   };
-
   // Calcula estatísticas para o dashboard (com proteção contra dados inválidos)
   const validFormulas = Array.isArray(formulas) ? formulas.filter(f => f?.result?.cost != null) : [];
   const stats = {
