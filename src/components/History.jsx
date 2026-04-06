@@ -105,7 +105,7 @@ export default function History({ formulas }) {
                   </div>
                 </div>
               </div>
-            );
+            ); 
           })}
         </div>
       )}
