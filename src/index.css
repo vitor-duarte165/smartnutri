@@ -1,72 +1,130 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* CSS reset básico e estilos customizados */
 
-@layer base {
-  body {
-    @apply bg-gray-eco-light text-gray-900;
-  }
-
-  /* Compat: define non-prefixed appearance alongside vendor-prefixed variants */
-  button, input[type="button"], input[type="reset"], input[type="submit"], select {
-    -webkit-appearance: button;
-    appearance: button;
-  }
-
-  input[type="search"] {
-    -webkit-appearance: textfield;
-    appearance: textfield;
-  }
-
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  ::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    appearance: button;
-  }
+* {
+  box-sizing: border-box;
 }
 
-@layer components {
-  .sidebar-link {
-    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-200;
-  }
-  
-  .sidebar-link:hover {
-    @apply bg-eco-dark bg-opacity-20;
-  }
-  
-  .sidebar-link.active {
-    @apply bg-eco-accent text-white;
-  }
-  
-  .card {
-    @apply bg-white rounded-xl shadow-md p-6;
-  }
-  
-  .btn-primary {
-    @apply bg-eco-accent hover:bg-eco-medium text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-eco-medium hover:bg-gray-300 text-eco-dark font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
-  }
-  
-  .input-field {
-    @apply w-full px-4 py-2 border border-gray-eco-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-eco-accent focus:border-transparent;
-  }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f0fdf4; /* bg-green-50 */
+  color: #111827; /* text-gray-900 */
+}
 
-  .checkbox-control {
-    @apply h-5 w-5 rounded border border-gray-eco-medium bg-white focus:outline-none focus:ring-2 focus:ring-eco-accent;
-  }
+/* Compatibilidade para botões e inputs */
+button, input[type="button"], input[type="reset"], input[type="submit"], select {
+  -webkit-appearance: button;
+  appearance: button;
+}
 
-  .checkbox-control:checked {
-    @apply bg-eco-accent border-eco-accent;
-  }
+input[type="search"] {
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
 
-  .checkbox-label {
-    @apply flex items-center gap-3 cursor-pointer select-none;
-  }
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+/* Componentes customizados */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(27, 67, 50, 0.2); /* bg-eco-dark bg-opacity-20 */
+}
+
+.sidebar-link.active {
+  background-color: #16a34a; /* bg-green-600 */
+  color: white;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #16a34a; /* bg-green-600 */
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #15803d; /* bg-green-700 */
+}
+
+.btn-secondary {
+  background-color: #e5e7eb; /* bg-gray-eco-medium approx */
+  color: #1b4332; /* text-eco-dark */
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db; /* hover:bg-gray-300 */
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb; /* border-gray-eco-medium */
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #16a34a; /* focus:ring-green-600 */
+}
+
+.checkbox-control {
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb; /* border-gray-eco-medium */
+  background-color: white;
+  outline: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkbox-control:focus {
+  box-shadow: 0 0 0 2px #40916c; /* focus:ring-eco-accent */
+}
+
+.checkbox-control:checked {
+  background-color: #16a34a; /* bg-green-600 */
+  border-color: #16a34a; /* border-green-600 */
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
 }
