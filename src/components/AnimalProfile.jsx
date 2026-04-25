@@ -122,7 +122,7 @@ export default function AnimalProfile({ onProfileSelect }) {
               </div>
               <button
                 onClick={handleSave}
-                className="btn-primary w-full md:w-auto"
+                className="btn-primary flex items-center"
               >
                 <Save className="w-5 h-5 inline mr-2" />
                 Salvar Perfil
