@@ -39,7 +39,6 @@ export default function IngredientsTable({ ingredients, onUpdateIngredient }) {
       setSelectAll(allEnabled);
     }
   }, [ingredients]);
-
   const handleToggleAll = (checked) => {
     setSelectAll(checked);
     ingredients.forEach(ing => {
