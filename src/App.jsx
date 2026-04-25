@@ -52,15 +52,15 @@ function App() {
       setActiveView('formulate');
     } else if (action === 'formulate-bovino') {
       setActiveView('formulate');
-      // Poderia pré-selecionar bovino aqui se necessário
+      
     } else if (action === 'formulate-suino') {
       setActiveView('formulate');
-      // Poderia pré-selecionar suíno aqui se necessário 
+     
     } else if (action === 'ingredients') {
       setActiveView('ingredients');
     }
   };
-  // Calcula estatísticas para o dashboard (com proteção contra dados inválidos)
+  
   const validFormulas = Array.isArray(formulas) ? formulas.filter(f => f?.result?.cost != null) : [];
   const stats = {
     totalIngredients: Array.isArray(ingredients) ? ingredients.length : 0,
